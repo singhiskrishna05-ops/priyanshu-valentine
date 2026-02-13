@@ -1,0 +1,215 @@
+<DOCTYPE html>
+<html>
+<head>
+  <title>For Priyanshu 🖤</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      padding-top: 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 16px;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background-color: white;
+      color: black;
+    }
+
+    #noBtn {
+      background-color: #222;
+      color: white;
+      position: relative;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .sleep-container {
+      width: 80%;
+      margin: 20px auto;
+      background: #222;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .sleep-bar {
+      height: 20px;
+      width: 90%;
+      background: white;
+      animation: sleepDrain 8s linear infinite;
+    }
+
+    @keyframes sleepDrain {
+      0% { width: 90%; }
+      50% { width: 40%; }
+      100% { width: 10%; }
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: white;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-800px) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Priyanshu… 🖤</h1>
+
+  <p>
+    Before you say “hmko neend nhi aa rha h”
+    and sleep mid-conversation again… 😭
+  </p>
+
+  <div class="sleep-container">
+    <div class="sleep-bar"></div>
+  </div>
+
+  <p>Sleep Level: Critical ⚠ Might pass out anytime.</p>
+
+  <p>
+    It has officially been 11 months of your sleep attacks
+    and your legendary inability to decide what to eat.
+  </p>
+
+  <p>
+    From Pirates of Grill — where it all started —
+    to Burger King becoming our emotional support place…
+  </p>
+
+  <h1>Will you be my Valentine? 🖤</h1>
+
+  <div class="buttons">
+    <button id="yesBtn" onclick="sayYes()">YES 🖤</button>
+    <button id="noBtn" onclick="sayNo()">NO 😏</button>
+  </div>
+</div>
+
+<script>
+let noClickCount = 0;
+
+function sayNo() {
+  noClickCount++;
+  const noBtn = document.getElementById("noBtn");
+
+  if (noClickCount == 1) {
+    noBtn.innerText = "Are you sure??? 🤨";
+  } 
+  else if (noClickCount == 2) {
+    noBtn.innerText = "Think properly Priyanshu 😒";
+  } 
+  else if (noClickCount == 3) {
+    noBtn.innerText = "Oye 😭 don’t act smart.";
+  } 
+  else if (noClickCount == 4) {
+    noBtn.innerText = "Last warning. This is important.";
+  } 
+  else {
+    noBtn.innerText = "Nice try 😌🖤";
+  }
+
+  const x = Math.floor(Math.random() * 300) - 150;
+  const y = Math.floor(Math.random() * 200) - 100;
+
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function sayYes() {
+  document.body.innerHTML = `
+    <div style="background:black; color:white; padding:60px; height:100vh;">
+      <h1>I knew it, Priyanshu 🖤</h1>
+
+      <p>
+        From Pirates of Grill — our origin story —
+        to Burger King being our forever comfort place…
+      </p>
+
+      <p>
+        From “hmko neend nhi aa rha h”
+        to disappearing mid-convo…
+      </p>
+
+      <p>
+        11 months of chaos, confusion,
+        and unexpected nap attacks…
+      </p>
+
+      <h2>I still choose you. 🖤</h2>
+
+      <iframe width="0" height="0"
+      src="https://www.youtube.com/embed/lDetXuXJz_0?autoplay=1&loop=1&playlist=lDetXuXJz_0"
+      frameborder="0"
+      allow="autoplay">
+      </iframe>
+    </div>
+  `;
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "🖤";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+setInterval(createHeart, 800);
+</script>
+
+</body>
+</html>
